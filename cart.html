@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .product {
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-left: 700px;
+        }
+
+        img {
+            width: 1200px;
+            margin-left: 180px;
+        }
+
+        #cart {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            margin-bottom: 5px;
+        }
+
+        button.add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button.add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        * {
+            margin: 0;
+            font-family: Arial;
+            border: border-box;
+        }
+
+        .navbar {
+            height: 60px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: 100px;
+        }
+
+        .logo {
+            background-image: url("amazon_logo.png");
+            background-size: cover;
+            height: 50px;
+            width: 100px;
+        }
+
+        .border {
+            border: 1.5px solid transparent;
+        }
+
+        .border:hover {
+            border: 1.5px solid white;
+        }
+
+        /* box2 */
+        .add-first {
+            color: #cccccc;
+            font-size: 0.85rem;
+            margin-left: 15px;
+        }
+
+        .add-second {
+            font-size: 1rem;
+            margin-left: 3px;
+        }
+
+        .add-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        /* box3 */
+
+        .nav-search {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: pink;
+            width: 620px;
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        .search-select {
+            background-color: #f3f3f3;
+            width: 500px;
+            text-align: center;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border: none;
+        }
+
+        .search-input {
+            width: 100%;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .search-icon {
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            background-color: #febd68;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: #0f1111;
+        }
+
+        .nav-search:hover {
+            border: 2px solid orange;
+        }
+
+        /* box4 */
+        span {
+            font-size: 0.7rem;
+        }
+
+        .nav-second {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* box 6*/
+        .nav-Cart i {
+            font-size: 30px;
+        }
+
+        .nav-cart {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* panel */
+        .panel {
+            height: 35px;
+            background-color: #222f3d;
+            display: flex;
+            color: white;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .panel-ops p {
+            display: inline;
+            margin-left: 15px;
+        }
+
+        .panel-ops {
+            width: 70%;
+            font-size: 0.85rem;
+        }
+
+        .panel-deals {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .mobiles {
+            margin: 40px;
+        }
+
+        .mobiles1 {
+            margin: 58px;
+        }
+
+        .deal {
+            margin-left: 90px;
+        }
+
+        img {
+            border-radius: 50px;
+        }
+
+        .text {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .text1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .text2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .text3 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .text4 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .text5 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+
+            <div class="nav-address border">
+                <p class="add-first">deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">India</p>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="serach-select">
+                    <option>All</option>
+                    <option>Home</option>
+                    <option>Sell</option>
+                    <option>Cart</option>
+                    <option>Mobiles</option>
+                    <option>Log-In</option>
+                </select>
+                <input placeholder="Search Amazon" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="nav-signin border">
+                <p><span>Hello, sign in</span></p>
+                <p class="nav-second">Account & Lists</p>
+            </div>
+
+            <div class="nav-return border">
+                <p><span>Return</span></p>
+                <p class="nav-second">& Orders</p>
+            </div>
+            <div class="nav-Cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-ops">
+                <a href="sell.html">
+                    <p class="text">Home</p>
+                </a>
+                <a href="amazon.html">
+                    <p class="text1">Sell</p>
+                </a>
+                <a href="cart.html">
+                    <p class="text2">Cart</p>
+                </a>
+                <a href="mobile.html">
+                    <p class="text3">Mobiles</p>
+                </a>
+                <a href="login.html">
+                    <p class="text4">Log-In</p>
+                </a>
+                <a href="contact.html">
+                    <p class="text5">ContactUs</p>
+                </a>
+            </div>
+            <div class="panel-deals">
+                Shop deals in Electronics
+            </div>
+        </div>
+    </header>
+    <img src="iphone.jpg" alt="Product 1">
+    <div id="products">
+
+
+        <h3 style="text-align: center;">Durable color-infused glassand aluminum design </h3>
+        <div class="product">
+            <p>$10.00</p>
+            <button class="add-to-cart" data-name="Product 1" data-price="10.00">Add to Cart</button>
+        </div>
+    </div>
+    <img src="tollybag.png" alt="Product 1">
+    <div id="products">
+
+
+        <h3 style="text-align: center;">
+            Safari Pentagon 55 Cms Small Cabin Polypropylene Hard Sided 4 Wheels 360 Degree Wheeling System Luggage/
+            Suitcase/Trolley Bag, Cyan Blue</h3>
+        <div class="product">
+            <p>$10.00</p>
+            <button class="add-to-cart" data-name="Product 1" data-price="10.00">Add to Cart</button>
+        </div>
+    </div>
+    <img src="cycle.jpeg" alt="Product 1">
+    <div id="products">
+
+
+        <h3 style="text-align: center;">Mercedes-Benz Foldable Cycle with 21 Speed Gears - Hybrid Cycle - 3 Spokes</h3>
+        <div class="product">
+            <p>$10.00</p>
+            <button class="add-to-cart" data-name="Product 1" data-price="10.00">Add to Cart</button>
+        </div>
+    </div>
+    <img src="applewatch.jpg" alt="Product 1">
+    <div id="products">
+
+
+        <h3 style="text-align: center;">
+            apple Watch Ultra [GPS + Cellular 49 mm] smart watch w/Rugged Titanium Case & Orange Alpine Loop - Small.
+            Fitness Tracker, Precision GPS, Action Button, Extra-Long BatteryLife, Brighter Retina Display</h3>
+        <div class="product">
+            <p>$10.00</p>
+            <button class="add-to-cart" data-name="Product 1" data-price="10.00">Add to Cart</button>
+        </div>
+    </div>
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+    </div>
+</body>
+
+</html>
